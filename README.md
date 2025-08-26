@@ -11,7 +11,7 @@ It’s designed with **HTML & CSS** and hosted using **GitHub Pages**.
 - Easy to customize and expand
 
 ## 🚀 Live Website
-[👉 View My Portfolio](https://arinXcodes69.github.io/portfolio)
+[👉 View My Portfolio] (https://arinxcodes69.github.io/Portfolio/)
 
 ## 🛠️ Built With
 - HTML5
