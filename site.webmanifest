@@ -1,0 +1,17 @@
+{
+  "name": "Arin Varconkar",
+  "short_name": "Arin",
+  "start_url": "/Portfolio/",
+  "scope": "/Portfolio/",
+  "display": "standalone",
+  "background_color": "#f2eee6",
+  "theme_color": "#bb4d18",
+  "description": "Personal website for Arin Varconkar.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Arin Varconkar favicon">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9d29d" />
+      <stop offset="100%" stop-color="#bb4d18" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#bg)" />
+  <path d="M36 94 58 34h12l22 60H80l-4.7-13.6H52.7L48 94Zm20.7-24h14.6L64 48.1Z" fill="#fff8f0" />
+</svg>
