@@ -42,27 +42,33 @@
   <rect x="118" y="112" width="194" height="42" rx="21" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.16)" />
   <text x="152" y="140" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffcf93" letter-spacing="3">PORTFOLIO REPO</text>
 
-  <text x="116" y="236" font-family="Georgia, 'Times New Roman', serif" font-size="78" fill="#fff7ef">Arin Varconkar</text>
-  <text x="116" y="306" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#d9c8b8">A cinematic portfolio built with vanilla code,</text>
-  <text x="116" y="342" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#d9c8b8">live GitHub projects, editorial motion, dark mode,</text>
-  <text x="116" y="378" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#d9c8b8">and a growing personal identity.</text>
+  <text x="116" y="236" font-family="Georgia, 'Times New Roman', serif" font-size="74" fill="#fff7ef">Arin Varconkar</text>
+  <text x="116" y="304" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#d9c8b8">Vanilla-code portfolio with live GitHub projects,</text>
+  <text x="116" y="338" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#d9c8b8">editorial motion, dark mode, and a stronger</text>
+  <text x="116" y="372" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#d9c8b8">digital identity built in public.</text>
 
   <rect x="118" y="418" width="320" height="10" rx="5" fill="url(#accent)" />
 
-  <g transform="translate(804 160)">
-    <rect width="332" height="296" rx="26" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" />
+  <g transform="translate(838 164)">
+    <rect width="286" height="262" rx="26" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" />
     <rect x="26" y="24" width="110" height="30" rx="15" fill="rgba(255,255,255,0.08)" />
     <text x="44" y="44" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffcf93" letter-spacing="2">LIVE FEATURES</text>
 
-    <text x="28" y="90" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#fff7ef">• GitHub-synced project cards</text>
-    <text x="28" y="122" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#fff7ef">• Auto-derived skills</text>
-    <text x="28" y="154" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#fff7ef">• Dark mode toggle</text>
-    <text x="28" y="186" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#fff7ef">• Canva showcase area</text>
-    <text x="28" y="218" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#fff7ef">• Smooth editorial UI motion</text>
+    <rect x="26" y="74" width="188" height="28" rx="14" fill="rgba(255,255,255,0.08)" />
+    <text x="42" y="93" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#fff7ef" letter-spacing="1">GITHUB PROJECT SYNC</text>
 
-    <rect x="26" y="252" width="128" height="14" rx="7" fill="#f18a4a" fill-opacity="0.65" />
-    <rect x="164" y="252" width="62" height="14" rx="7" fill="#fff7ef" fill-opacity="0.22" />
-    <rect x="234" y="252" width="66" height="14" rx="7" fill="#fff7ef" fill-opacity="0.1" />
+    <rect x="26" y="114" width="154" height="28" rx="14" fill="rgba(255,255,255,0.08)" />
+    <text x="42" y="133" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#fff7ef" letter-spacing="1">AUTO-DERIVED SKILLS</text>
+
+    <rect x="26" y="154" width="138" height="28" rx="14" fill="rgba(255,255,255,0.08)" />
+    <text x="42" y="173" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#fff7ef" letter-spacing="1">DARK MODE TOGGLE</text>
+
+    <rect x="26" y="194" width="170" height="28" rx="14" fill="rgba(255,255,255,0.08)" />
+    <text x="42" y="213" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#fff7ef" letter-spacing="1">CANVA SHOWCASE AREA</text>
+
+    <rect x="26" y="234" width="164" height="12" rx="6" fill="#f18a4a" fill-opacity="0.7" />
+    <rect x="198" y="234" width="42" height="12" rx="6" fill="#fff7ef" fill-opacity="0.2" />
+    <rect x="246" y="234" width="24" height="12" rx="6" fill="#fff7ef" fill-opacity="0.1" />
   </g>
 
   <text x="118" y="516" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#a99684" letter-spacing="2">HTML / CSS / JAVASCRIPT / GITHUB PAGES / VERCEL</text>
