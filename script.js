@@ -2,6 +2,7 @@ const siteData = {
   profile: {
     name: "Arin Varconkar",
     role: "B.Tech AI & DS student",
+    photo: "https://avatars.githubusercontent.com/arinXcodes69?v=4",
     birthDate: {
       year: 2006,
       month: 12,
@@ -23,6 +24,10 @@ const siteData = {
       "Right now, this site is a growing personal space where I can show who I am, what I am learning, and the kind of work I want to create over time.",
     ],
   },
+  github: {
+    url: "https://github.com/arinXcodes69",
+  },
+  baseSkills: ["C", "C++", "Canva", "AI & DS", "HTML", "CSS", "GitHub"],
   heroSignals: [
     "Building stronger fundamentals in C and C++ through practice, repetition, and cleaner logic.",
     "Using Canva to turn simple ideas into presentation-ready visuals and cleaner academic design.",
@@ -45,7 +50,8 @@ const siteData = {
   navigation: [
     { id: "about", label: "About" },
     { id: "focus", label: "Focus" },
-    { id: "services", label: "Services" },
+    { id: "skills", label: "Skills" },
+    { id: "education", label: "Education" },
     { id: "work", label: "Work" },
     { id: "canva", label: "Canva" },
     { id: "notes", label: "Notes" },
@@ -76,23 +82,6 @@ const siteData = {
       title: "Canva Design",
       text:
         "Using design tools like Canva to create visuals, presentations, and polished digital content.",
-    },
-  ],
-  services: [
-    {
-      title: "Programming Skills",
-      text:
-        "My current technical foundation is centered on C and C++, with room to grow into larger software and AI-focused projects.",
-    },
-    {
-      title: "Creative Design",
-      text:
-        "I also work with Canva to create clean visual content that looks organized, modern, and easy to understand.",
-    },
-    {
-      title: "Growth Mindset",
-      text:
-        "This website is set up to grow with my learning, future projects, and the direction I take next.",
     },
   ],
   projects: [
@@ -176,6 +165,15 @@ const siteData = {
     "Keep the design clear, modern, and easy to follow.",
     "Make the structure editable so it can grow with new skills and projects.",
   ],
+  education: [
+    {
+      degree: "B.Tech in Artificial Intelligence and Data Science",
+      college: "Parul University",
+      year: "Ongoing",
+      detail:
+        "Building core technical foundations while exploring programming, AI concepts, and design-driven presentation work.",
+    },
+  ],
   canvaProjects: [
     {
       name: "Assignment Cover Design",
@@ -216,11 +214,13 @@ let navOpen = false;
 let timeIntervalId;
 let headlineIntervalId;
 let heroGlowFrames = new WeakMap();
-
-const projectCategories = [
-  "All",
-  ...new Set(siteData.projects.map((project) => project.category)),
-];
+let githubProjects = [];
+let derivedSkills = [...siteData.baseSkills];
+let repoFetchState = {
+  status: "idle",
+  error: "",
+  lastUpdated: "",
+};
 
 const getDatePartsInTimeZone = (date, timeZone) => {
   const formatter = new Intl.DateTimeFormat("en-CA", {
@@ -303,18 +303,126 @@ const getProfileSummary = () => [
   "Right now, this site is a growing personal space where I can show who I am, what I am learning, and the kind of work I want to create over time.",
 ];
 
+const skillKeywordMap = {
+  "ai": "Artificial Intelligence",
+  "artificial intelligence": "Artificial Intelligence",
+  "data science": "Data Science",
+  "machine learning": "Machine Learning",
+  "deep learning": "Deep Learning",
+  "big data": "Big Data",
+  "c++": "C++",
+  " c ": "C",
+  " c,": "C",
+  " c.": "C",
+  "html": "HTML",
+  "css": "CSS",
+  "javascript": "JavaScript",
+  "typescript": "TypeScript",
+  "react": "React",
+  "node": "Node.js",
+  "python": "Python",
+  "canva": "Canva",
+  "git": "Git",
+  "github": "GitHub",
+  "api": "APIs",
+  "portfolio": "Portfolio Development",
+  "responsive": "Responsive Design",
+  "ui": "UI Design",
+  "ux": "UX Thinking",
+};
+
+const escapeHtml = (value) =>
+  String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+
+const getGitHubUsername = () => {
+  const githubLink = siteData.github?.url || siteData.links.find((link) => link.label === "GitHub")?.href;
+
+  if (!githubLink) {
+    return "";
+  }
+
+  return githubLink
+    .replace("https://github.com/", "")
+    .replace("http://github.com/", "")
+    .replaceAll("/", "")
+    .trim();
+};
+
+const formatRepoName = (name) =>
+  name
+    .replaceAll(/[-_]+/g, " ")
+    .replace(/\b\w/g, (match) => match.toUpperCase());
+
+const getProjectSource = () => (githubProjects.length ? githubProjects : siteData.projects);
+
+const getProjectCategories = () => [
+  "All",
+  ...new Set(getProjectSource().map((project) => project.category)),
+];
+
+const extractSkillsFromTexts = (texts) => {
+  const foundSkills = new Set();
+  const normalized = texts.join(" ").toLowerCase();
+
+  Object.entries(skillKeywordMap).forEach(([keyword, skill]) => {
+    if (normalized.includes(keyword)) {
+      foundSkills.add(skill);
+    }
+  });
+
+  return foundSkills;
+};
+
+const buildDerivedSkills = () => {
+  const seed = new Set(siteData.baseSkills);
+  const profileTexts = [
+    siteData.profile.role,
+    siteData.profile.intro,
+    ...siteData.profile.summary,
+    ...siteData.heroSignals,
+    ...siteData.focusAreas.map((area) => `${area.title} ${area.text}`),
+    ...siteData.education.map((item) => `${item.degree} ${item.college} ${item.detail}`),
+  ];
+
+  extractSkillsFromTexts(profileTexts).forEach((skill) => seed.add(skill));
+
+  githubProjects.forEach((project) => {
+    if (project.primaryLanguage) {
+      seed.add(project.primaryLanguage);
+    }
+
+    extractSkillsFromTexts([
+      project.name,
+      project.blurb,
+      project.detail,
+      ...(project.topics || []),
+    ]).forEach((skill) => seed.add(skill));
+  });
+
+  return [...seed].sort((left, right) => left.localeCompare(right));
+};
+
 const getHeroMetrics = () => [
   {
     value: `${getCurrentAge()}`,
     label: "Years old and learning in public",
   },
-  ...siteData.metrics.slice(1),
+  {
+    value: githubProjects.length ? `${githubProjects.length}` : "GitHub",
+    label: githubProjects.length ? "Live repos surfaced" : "Projects syncing from GitHub",
+  },
+  ...siteData.metrics.slice(1, 3),
 ];
 
 const getFilteredProjects = () =>
   currentCategory === "All"
-    ? siteData.projects
-    : siteData.projects.filter((project) => project.category === currentCategory);
+    ? getProjectSource()
+    : getProjectSource().filter((project) => project.category === currentCategory);
 
 const createProjectCard = (project, index, isActive) => `
   <article class="project-card reveal${isActive ? " is-active" : ""}" data-index="${index}">
@@ -324,9 +432,18 @@ const createProjectCard = (project, index, isActive) => `
       <span class="category-badge">${project.category}</span>
     </div>
     <p>${project.blurb}</p>
+    ${project.stats ? `<div class="project-statline">${project.stats}</div>` : ""}
     <button class="project-trigger" type="button" data-project="${project.name}">
       Open spotlight
     </button>
+  </article>
+`;
+
+const createSkillCard = (skill, index) => `
+  <article class="service-card reveal">
+    <p class="project-index">${String(index + 1).padStart(2, "0")}</p>
+    <h3>${skill}</h3>
+    <p>Auto-derived from profile details, current learning focus, and live GitHub repositories.</p>
   </article>
 `;
 
@@ -452,6 +569,12 @@ const renderApp = () => {
           </div>
 
           <aside class="hero-card reveal" aria-label="Live snapshot">
+            <img
+              class="profile-photo"
+              src="${siteData.profile.photo}"
+              alt="${siteData.profile.name}"
+              loading="eager"
+            />
             <div class="orbital-ring orbital-ring-one"></div>
             <div class="orbital-ring orbital-ring-two"></div>
             <div class="hero-card-head">
@@ -478,7 +601,7 @@ const renderApp = () => {
             <ul class="status-list">
               <li>Based in ${siteData.profile.location}</li>
               <li id="local-time">Local time loading...</li>
-              <li id="project-count">${siteData.projects.length} total projects loaded</li>
+              <li id="project-count">${getProjectSource().length} projects in the current view</li>
             </ul>
             <div class="mini-card-grid">
               ${siteData.highlights
@@ -518,19 +641,35 @@ const renderApp = () => {
           </div>
         </section>
 
-        <section class="services section" id="services">
+        <section class="services section" id="skills">
           <div class="section-heading">
-            <p class="section-kicker">Services</p>
-            <h2>Current strengths and where I am building next.</h2>
+            <p class="section-kicker">Skills</p>
+            <h2>Auto-built from what I study, write, and ship.</h2>
           </div>
-          <div class="service-grid">
-            ${siteData.services
+          <div class="section-copy reveal">
+            <p id="skills-meta">
+              Pulling signals from profile content and GitHub repositories to keep this section grounded in real work.
+            </p>
+          </div>
+          <div class="service-grid" id="skills-grid">
+            ${derivedSkills.slice(0, 6).map((skill, index) => createSkillCard(skill, index)).join("")}
+          </div>
+        </section>
+
+        <section class="timeline section" id="education" aria-label="Education">
+          <div class="section-heading">
+            <p class="section-kicker">Education</p>
+            <h2>The academic path behind the portfolio.</h2>
+          </div>
+          <div class="timeline-grid">
+            ${siteData.education
               .map(
-                (service, index) => `
-                  <article class="service-card reveal">
+                (item, index) => `
+                  <article class="timeline-card reveal">
                     <p class="project-index">0${index + 1}</p>
-                    <h3>${service.title}</h3>
-                    <p>${service.text}</p>
+                    <h3>${item.degree}</h3>
+                    <p><strong>${item.college}</strong> · ${item.year}</p>
+                    <p>${item.detail}</p>
                   </article>
                 `
               )
@@ -541,24 +680,13 @@ const renderApp = () => {
         <section class="work section" id="work">
           <div class="section-heading section-heading-split">
             <div>
-              <p class="section-kicker">Selected Work</p>
-              <h2>A structure ready for real projects, learning, and creative work.</h2>
+              <p class="section-kicker">Projects</p>
+              <h2>Live repositories first, with the rest of the story still editable.</h2>
+              <p class="section-copy" id="repo-sync-state">
+                Syncing public repositories from GitHub for the projects section.
+              </p>
             </div>
-            <div class="filter-bar" role="tablist" aria-label="Project filters">
-              ${projectCategories
-                .map(
-                  (category) => `
-                    <button
-                      class="filter-chip${category === currentCategory ? " is-active" : ""}"
-                      type="button"
-                      data-category="${category}"
-                    >
-                      ${category}
-                    </button>
-                  `
-                )
-                .join("")}
-            </div>
+            <div class="filter-bar" id="filter-bar" role="tablist" aria-label="Project filters"></div>
           </div>
 
           <div class="spotlight-card reveal" id="spotlight-card"></div>
@@ -705,10 +833,72 @@ const renderApp = () => {
   `;
 
   renderProjects();
+  renderSkills();
   bindEvents();
   applyMood(window.localStorage.getItem(storageKey) || "day");
   hydrateLiveBits();
   setupRevealObserver();
+};
+
+const renderProjectFilters = () => {
+  const filterBar = document.querySelector("#filter-bar");
+
+  if (!filterBar) {
+    return;
+  }
+
+  filterBar.innerHTML = getProjectCategories()
+    .map(
+      (category) => `
+        <button
+          class="filter-chip${category === currentCategory ? " is-active" : ""}"
+          type="button"
+          data-category="${category}"
+        >
+          ${category}
+        </button>
+      `
+    )
+    .join("");
+};
+
+const renderSkills = () => {
+  const skillsGrid = document.querySelector("#skills-grid");
+  const skillsMeta = document.querySelector("#skills-meta");
+
+  if (!skillsGrid || !skillsMeta) {
+    return;
+  }
+
+  skillsMeta.textContent = githubProjects.length
+    ? `${derivedSkills.length} skills inferred from profile details and ${githubProjects.length} public GitHub repositories.`
+    : "Using profile details now, then expanding this section with live GitHub signals once repositories load.";
+
+  skillsGrid.innerHTML = derivedSkills
+    .slice(0, 6)
+    .map((skill, index) => createSkillCard(skill, index))
+    .join("");
+};
+
+const syncLiveSummary = () => {
+  const metricPills = document.querySelectorAll(".metric-pill");
+  const projectCount = document.querySelector("#project-count");
+  const heroSyncPill = document.querySelector("#hero-sync-pill");
+
+  if (metricPills[1]) {
+    metricPills[1].innerHTML = `
+      <span class="metric-value">${githubProjects.length ? githubProjects.length : "GitHub"}</span>
+      <span class="metric-label">${githubProjects.length ? "Live repos surfaced" : "Projects syncing from GitHub"}</span>
+    `;
+  }
+
+  if (projectCount) {
+    projectCount.textContent = `${getProjectSource().length} projects in the current view`;
+  }
+
+  if (heroSyncPill) {
+    heroSyncPill.textContent = repoFetchState.status === "loaded" ? "GitHub synced" : "Updated live";
+  }
 };
 
 const renderProjects = () => {
@@ -716,9 +906,24 @@ const renderProjects = () => {
   const projectGrid = document.querySelector("#project-grid");
   const spotlightCard = document.querySelector("#spotlight-card");
   const projectCount = document.querySelector("#project-count");
+  const repoSyncState = document.querySelector("#repo-sync-state");
+
+  renderProjectFilters();
 
   if (projectCount) {
     projectCount.textContent = `${projects.length} projects in the current view`;
+  }
+
+  if (repoSyncState) {
+    if (repoFetchState.status === "loaded") {
+      repoSyncState.textContent = `Showing ${githubProjects.length} repositories from GitHub, sorted to surface the strongest public work first.`;
+    } else if (repoFetchState.status === "error") {
+      repoSyncState.textContent = "GitHub sync hit a limit just now, so the portfolio is falling back to local project entries.";
+    } else if (repoFetchState.status === "loading") {
+      repoSyncState.textContent = "Syncing public repositories from GitHub for the projects section.";
+    } else {
+      repoSyncState.textContent = "Local project cards are ready, with GitHub repo sync available when the page loads.";
+    }
   }
 
   if (!projects.length) {
@@ -797,7 +1002,7 @@ const updateSpotlightPanel = (project, itemCount) => {
 
 const bindEvents = () => {
   const themeToggle = document.querySelector(".theme-toggle");
-  const chips = document.querySelectorAll(".filter-chip");
+  const filterBar = document.querySelector("#filter-bar");
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelectorAll(".site-nav a");
   const projectModal = document.querySelector("#project-modal");
@@ -825,15 +1030,19 @@ const bindEvents = () => {
     });
   });
 
-  chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      currentCategory = chip.dataset.category;
-      spotlightIndex = 0;
-      renderProjects();
-      refreshFilterState();
-      bindProjectEvents();
-      setupRevealObserver();
-    });
+  filterBar?.addEventListener("click", (event) => {
+    const chip = event.target;
+
+    if (!(chip instanceof HTMLElement) || !chip.dataset.category) {
+      return;
+    }
+
+    currentCategory = chip.dataset.category;
+    spotlightIndex = 0;
+    renderProjects();
+    refreshFilterState();
+    bindProjectEvents();
+    setupRevealObserver();
   });
 
   closeModalButton?.addEventListener("click", closeProjectModal);
@@ -938,6 +1147,93 @@ const refreshFilterState = () => {
   document.querySelectorAll(".filter-chip").forEach((chip) => {
     chip.classList.toggle("is-active", chip.dataset.category === currentCategory);
   });
+};
+
+const normalizeGitHubProject = (repo) => {
+  const updatedYear = new Date(repo.updated_at).getFullYear();
+  const primaryLanguage = repo.language || "GitHub";
+  const stats = [
+    repo.language ? `Language: ${repo.language}` : null,
+    repo.stargazers_count ? `${repo.stargazers_count} star${repo.stargazers_count === 1 ? "" : "s"}` : null,
+    repo.forks_count ? `${repo.forks_count} fork${repo.forks_count === 1 ? "" : "s"}` : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  return {
+    name: formatRepoName(repo.name),
+    category: primaryLanguage,
+    year: `${updatedYear}`,
+    blurb: repo.description || "Public GitHub repository from Arin's profile.",
+    detail: `${repo.description || "A public code project synced from GitHub."} Last pushed ${new Date(repo.pushed_at).toLocaleDateString("en-IN", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}.`,
+    link: repo.html_url,
+    linkLabel: repo.homepage ? "View Repository" : "Open Repository",
+    stats,
+    topics: repo.topics || [],
+    primaryLanguage,
+  };
+};
+
+const fetchGitHubProjects = async () => {
+  const username = getGitHubUsername();
+
+  if (!username) {
+    return;
+  }
+
+  repoFetchState.status = "loading";
+  renderProjects();
+
+  try {
+    const response = await fetch(
+      `https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=100&type=owner`
+    );
+
+    if (!response.ok) {
+      throw new Error(`GitHub request failed with status ${response.status}`);
+    }
+
+    const repositories = await response.json();
+    githubProjects = repositories
+      .filter((repo) => !repo.fork)
+      .sort((left, right) => {
+        const leftScore = left.stargazers_count * 4 + left.forks_count * 2;
+        const rightScore = right.stargazers_count * 4 + right.forks_count * 2;
+
+        if (rightScore !== leftScore) {
+          return rightScore - leftScore;
+        }
+
+        return new Date(right.pushed_at) - new Date(left.pushed_at);
+      })
+      .slice(0, 6)
+      .map(normalizeGitHubProject);
+
+    repoFetchState.status = githubProjects.length ? "loaded" : "error";
+    repoFetchState.error = githubProjects.length ? "" : "No public repositories found";
+    repoFetchState.lastUpdated = new Date().toISOString();
+  } catch (error) {
+    repoFetchState.status = "error";
+    repoFetchState.error = error instanceof Error ? error.message : "Unknown GitHub sync error";
+    githubProjects = [];
+  }
+
+  derivedSkills = buildDerivedSkills();
+
+  if (!getProjectCategories().includes(currentCategory)) {
+    currentCategory = "All";
+  }
+
+  renderSkills();
+  renderProjects();
+  syncLiveSummary();
+  refreshFilterState();
+  bindProjectEvents();
+  setupRevealObserver();
 };
 
 const applyMood = (mood) => {
@@ -1089,7 +1385,12 @@ const hydrateLiveBits = () => {
     }
 
     if (heroSyncPill) {
-      heroSyncPill.textContent = "Updated live";
+      heroSyncPill.textContent =
+        repoFetchState.status === "loaded"
+          ? "GitHub synced"
+          : repoFetchState.status === "error"
+            ? "Fallback mode"
+            : "Updated live";
     }
   };
 
@@ -1175,3 +1476,4 @@ const setupRevealObserver = () => {
 
 renderApp();
 setupHeroInteractions();
+fetchGitHubProjects();
