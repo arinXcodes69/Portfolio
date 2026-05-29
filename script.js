@@ -1,50 +1,70 @@
 const siteData = {
   profile: {
     name: "Arin Varconkar",
-    role: "B.Tech AI & DS student",
+    role: "B.Tech CSE student, specializing in AI & Data Science",
     photo: "https://avatars.githubusercontent.com/arinXcodes69?v=4",
     birthDate: {
       year: 2006,
       month: 12,
       day: 8,
     },
-    eyebrow: "Portfolio, learning lab, and digital identity.",
+    eyebrow: "Portfolio, technical growth, and a sharper digital identity.",
     heading: [
       "Arin Varconkar.",
-      "AI & DS student,",
+      "CSE student,",
       "building with clarity.",
     ],
     intro:
-      "I am currently pursuing B.Tech in AI & DS from Parul. This site is my growing corner of the internet for projects, design experiments, coding practice, and the kind of work I want to be known for over time.",
-    location: "India",
-    availability: "Learning in public, sharpening fundamentals, and building a cleaner digital presence.",
+      "I am pursuing B.Tech in Computer Science Engineering at Parul University with a specialization in Artificial Intelligence and Data Science. This site is my space for projects, programming growth, design work, and the kind of practical learning I want to turn into real opportunities over time.",
+    location: "Vadodara, Gujarat, India",
+    availability: "Open to learning opportunities, hackathons, collaborations, and steady technical growth.",
     timezone: "Asia/Kolkata",
     summary: [
-      "I am pursuing B.Tech in Artificial Intelligence and Data Science from Parul, and I am building a foundation across programming, design, and digital creation.",
-      "Right now, this site is a growing personal space where I can show who I am, what I am learning, and the kind of work I want to create over time.",
+      "I am a first-year B.Tech Computer Science Engineering student at Parul University, specializing in Artificial Intelligence and Data Science while building a stronger base in programming, data thinking, and web fundamentals.",
+      "My resume shows the direction clearly: Python, C, C++, web basics, AI/ML fundamentals, data analysis, GitHub, and collaborative learning through hackathons, technical activities, and self-driven practice.",
     ],
   },
   github: {
     url: "https://github.com/arinXcodes69",
   },
-  baseSkills: ["C", "C++", "Canva", "AI & DS", "HTML", "CSS", "GitHub"],
+  baseSkills: [
+    "Python",
+    "C",
+    "C++",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Canva",
+    "Artificial Intelligence",
+    "Data Science",
+    "Machine Learning Basics",
+    "Data Analysis",
+    "Data Visualization",
+    "Git",
+    "GitHub",
+    "VS Code",
+    "Google Colab",
+    "Excel",
+    "Problem Solving",
+    "Team Collaboration",
+  ],
   heroSignals: [
-    "Building stronger fundamentals in C and C++ through practice, repetition, and cleaner logic.",
-    "Using Canva to turn simple ideas into presentation-ready visuals and cleaner academic design.",
-    "Shaping this website into a sharper signal for my projects, growth, and learning journey.",
+    "Deepening my Python, C, and C++ foundations while improving logic, problem solving, and cleaner implementation.",
+    "Learning AI/ML concepts, data analysis, and visualization alongside my CSE degree path and specialization.",
+    "Building a stronger public portfolio that connects coding, hackathon experience, design work, and consistent self-learning.",
   ],
   heroBoard: [
     {
       label: "Current path",
-      value: "B.Tech in AI & DS at Parul",
+      value: "B.Tech CSE with AI & DS specialization",
     },
     {
       label: "Core stack",
-      value: "C, C++, Canva",
+      value: "Python, C, C++, web basics, Canva",
     },
     {
       label: "Next layer",
-      value: "More real projects, stronger case studies, clearer identity",
+      value: "AI/ML depth, stronger projects, and better technical storytelling",
     },
   ],
   navigation: [
@@ -58,120 +78,137 @@ const siteData = {
     { id: "contact", label: "Contact" },
   ],
   metrics: [
-    { value: "01", label: "Home base on the web" },
-    { value: "AI & DS", label: "Current degree path" },
-    { value: "C/C++", label: "Core technical skill" },
+    { value: "1st Year", label: "Current academic stage" },
+    { value: "CSE + AI/DS", label: "Degree and specialization" },
+    { value: "Python · C · C++", label: "Core technical foundation" },
   ],
   highlights: [
-    "One source of truth for the whole site",
-    "Interactive sections with live filtering and spotlighting",
-    "Ready for real projects, links, and writing",
+    "GitHub-powered projects and auto-derived skill signals",
+    "Resume-backed profile details instead of generic placeholder copy",
+    "Ready for stronger real projects, internships, and case studies",
   ],
   focusAreas: [
     {
-      title: "AI & DS Journey",
+      title: "Computer Science Foundation",
       text:
-        "Building a strong foundation through my B.Tech in Artificial Intelligence and Data Science at Parul.",
+        "Building a stronger first-year base through B.Tech Computer Science Engineering at Parul University, with focus on clarity, consistency, and core technical understanding.",
     },
     {
-      title: "C and C++",
+      title: "Python, C, and C++",
       text:
-        "Strengthening my programming skills through core problem-solving, logic building, and structured thinking.",
+        "Practicing programming through logic building, OOP concepts, structured thinking, and steady problem-solving improvement.",
     },
     {
-      title: "Canva Design",
+      title: "AI/ML and Data Analysis",
       text:
-        "Using design tools like Canva to create visuals, presentations, and polished digital content.",
+        "Learning machine learning basics, conceptual neural networks, and foundational data analysis and visualization tools like Excel, Matplotlib, and Seaborn.",
+    },
+    {
+      title: "Web and Design Communication",
+      text:
+        "Exploring HTML, CSS, JavaScript, and Canva to communicate ideas more clearly through web interfaces and polished academic design work.",
     },
   ],
   projects: [
     {
-      name: "Student Portfolio",
-      category: "Identity",
+      name: "Personal Portfolio Website",
+      category: "Web",
       year: "2026",
       blurb:
-        "A personal website designed to introduce Arin Varconkar with more clarity, structure, and presence.",
+        "A responsive portfolio built to connect resume details, GitHub repositories, Canva work, and a more structured technical identity.",
       detail:
-        "Built as a flexible digital home for education details, skills, future projects, and personal growth over time.",
+        "This site acts as a living digital profile where I can keep refining my projects, skills, learning direction, and public-facing story over time.",
     },
     {
-      name: "AI & DS Journey",
-      category: "Education",
+      name: "Vadodara Hackathon 6.0",
+      category: "Hackathon",
       year: "2026",
       blurb:
-        "A space for documenting the learning path, interests, and future work connected to AI and Data Science.",
+        "Participated in a collaborative problem-solving hackathon and gained exposure to teamwork, innovation, and real-world thinking under time constraints.",
       detail:
-        "This section can later hold coursework, mini-projects, ideas, and milestones from the B.Tech journey.",
+        "The experience strengthened communication, adaptability, and critical thinking while showing me how technical ideas get shaped inside a team environment.",
     },
     {
-      name: "C/C++ Practice",
+      name: "Programming Practice Track",
       category: "Programming",
       year: "2026",
       blurb:
-        "A future-ready section for coding practice, logic building, and core programming exercises.",
+        "A growing practice lane focused on Python, C, C++, data structures, and cleaner logical thinking through repetition and self-learning.",
       detail:
-        "It can grow into a place for showcasing problem-solving work, small applications, and technical progress.",
+        "This will keep evolving into a stronger set of mini-projects, problem-solving work, and foundational programming exercises worth documenting publicly.",
     },
     {
       name: "Canva Projects",
       category: "Design",
       year: "2026",
       blurb:
-        "A dedicated design area for Canva work, structured so more visuals and layout projects can be added over time.",
+        "A dedicated design area for academic layouts, covers, presentation visuals, and other Canva-made work that supports my communication skills.",
       detail:
-        "This section acts as a Canva project hub, starting with one assignment cover design and leaving room for more posters, presentations, and visual work later.",
+        "This section acts as a visual showcase hub, starting with assignment cover work and leaving room for more presentation, poster, and design pieces later.",
     },
     {
-      name: "About Arin",
-      category: "Identity",
+      name: "AI/ML and Data Learning",
+      category: "Learning",
       year: "2026",
       blurb:
-        "A personal section for background, interests, education, and the direction Arin wants to grow toward.",
+        "A structured learning track around machine learning basics, conceptual neural networks, data analysis, and visualization.",
       detail:
-        "This keeps the site grounded in a real identity instead of feeling like a generic student profile.",
+        "It reflects the academic specialization behind my degree and the technical areas I want to keep developing through coursework and projects.",
     },
     {
-      name: "Next Steps",
+      name: "Technical Growth Log",
       category: "Connection",
       year: "2026",
       blurb:
-        "A simple path for future contact links, opportunities, collaborations, and profile connections.",
+        "A place for documenting the small but important steps that shape stronger technical confidence over time.",
       detail:
-        "It stays lightweight now and can be expanded later with real handles, an email, or stronger project links.",
+        "That includes coursework progress, coding challenges, GitHub work, and the learning signals that eventually turn into internship-ready projects.",
     },
   ],
   notes: [
     {
-      type: "Essay",
-      title: "What I want this site to become",
+      type: "Objective",
+      title: "Career direction",
       summary:
-        "Not just a student profile, but a place that can hold my skills, work, learning journey, and a clearer sense of identity over time.",
+        "I want to keep learning, building, and applying technology to real-world problems while growing into meaningful projects through consistent practice.",
     },
     {
-      type: "Journal",
-      title: "Learning step by step",
+      type: "Learning",
+      title: "What I am studying right now",
       summary:
-        "The strongest skills usually come from steady practice, and this site is built to reflect that growth over time.",
+        "Python, data structures, AI/ML concepts, web development basics, data analysis, visualization, and better Git/GitHub habits are all active parts of my current learning cycle.",
     },
     {
-      type: "Note",
-      title: "Skills I am building",
+      type: "Activity",
+      title: "Beyond coursework",
       summary:
-        "C, C++, Canva, and my AI & DS journey are the starting points. This website is ready to grow as that list grows.",
+        "Hackathons, coding challenges, workshops, college events, and AI communities are helping me build confidence beyond the classroom too.",
     },
   ],
-  principles: [
-    "Start with a real identity, then let the site grow around it.",
-    "Keep the design clear, modern, and easy to follow.",
-    "Make the structure editable so it can grow with new skills and projects.",
+  strengths: [
+    {
+      title: "Problem Solving",
+      text:
+        "I enjoy working through logic-heavy tasks step by step and getting stronger by practice instead of rushing past fundamentals.",
+    },
+    {
+      title: "Adaptability and Teamwork",
+      text:
+        "Hackathon participation and extracurricular involvement have helped me collaborate better, communicate clearly, and stay flexible when solving problems with others.",
+    },
+    {
+      title: "Consistent Learning",
+      text:
+        "The biggest pattern in my resume is consistency: learning across programming, web basics, AI/ML concepts, and data tools with the goal of turning that into better real work.",
+    },
   ],
   education: [
     {
-      degree: "B.Tech in Artificial Intelligence and Data Science",
-      college: "Parul University",
-      year: "Ongoing",
+      degree: "B.Tech in Computer Science Engineering",
+      college: "Parul University, Vadodara, Gujarat",
+      year: "1st Year · AI & DS Specialization",
       detail:
-        "Building core technical foundations while exploring programming, AI concepts, and design-driven presentation work.",
+        "Building technical foundations across programming, AI/ML fundamentals, data science basics, and web development while specializing in Artificial Intelligence and Data Science.",
     },
   ],
   canvaProjects: [
@@ -192,14 +229,19 @@ const siteData = {
       value: "varconkararin08@gmail.com",
     },
     {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/arin-varconkar0825",
+      value: "linkedin.com/in/arin-varconkar0825",
+    },
+    {
       label: "GitHub",
       href: "https://github.com/arinXcodes69",
       value: "github.com/arinXcodes69",
     },
     {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/arin-varconkar0825",
-      value: "linkedin.com/in/arin-varconkar0825",
+      label: "Resume Focus",
+      href: "#about",
+      value: "CSE · AI & DS · Python · C/C++",
     },
   ],
 };
@@ -296,11 +338,11 @@ const getTimeContext = () => {
 };
 
 const getProfileIntro = () =>
-  `I am ${getCurrentAge()} years old and currently pursuing B.Tech in AI & DS from Parul. This site is designed to grow with me and gradually become a stronger home for my work, skills, and learning journey.`;
+  `I am ${getCurrentAge()} years old and currently pursuing B.Tech in Computer Science Engineering at Parul University with a specialization in AI & Data Science. This site is built to grow with me as I turn coursework, self-learning, GitHub practice, and design work into a stronger technical portfolio.`;
 
 const getProfileSummary = () => [
-  `I am ${getCurrentAge()} years old, pursuing B.Tech in Artificial Intelligence and Data Science from Parul, and building a foundation across programming, design, and digital creation.`,
-  "Right now, this site is a growing personal space where I can show who I am, what I am learning, and the kind of work I want to create over time.",
+  `I am ${getCurrentAge()} years old, in my first year of B.Tech Computer Science Engineering at Parul University, and specializing in Artificial Intelligence and Data Science while building a stronger base in programming, data thinking, and communication.`,
+  "This version of the site now reflects what my resume actually shows: a student growing through Python, C, C++, AI/ML basics, data tools, web foundations, hackathon exposure, and steady self-learning.",
 ];
 
 const skillKeywordMap = {
@@ -404,7 +446,12 @@ const buildDerivedSkills = () => {
     ]).forEach((skill) => seed.add(skill));
   });
 
-  return [...seed].sort((left, right) => left.localeCompare(right));
+  const prioritized = siteData.baseSkills.filter((skill) => seed.has(skill));
+  const extras = [...seed]
+    .filter((skill) => !siteData.baseSkills.includes(skill))
+    .sort((left, right) => left.localeCompare(right));
+
+  return [...prioritized, ...extras];
 };
 
 const getHeroMetrics = () => [
@@ -614,7 +661,7 @@ const renderApp = () => {
         <section class="about section" id="about">
           <div class="section-heading">
             <p class="section-kicker">About</p>
-            <h2>A personal site that can evolve without starting over.</h2>
+            <h2>A clearer version of my academic and technical direction.</h2>
           </div>
           <div class="about-grid reveal">
             ${getProfileSummary().map((item) => `<p>${item}</p>`).join("")}
@@ -624,7 +671,7 @@ const renderApp = () => {
         <section class="timeline section" id="focus" aria-label="Focus areas">
           <div class="section-heading">
             <p class="section-kicker">Focus</p>
-            <h2>What this version is centered around right now.</h2>
+            <h2>What I am actively learning and sharpening right now.</h2>
           </div>
           <div class="timeline-grid">
             ${siteData.focusAreas
@@ -644,7 +691,7 @@ const renderApp = () => {
         <section class="services section" id="skills">
           <div class="section-heading">
             <p class="section-kicker">Skills</p>
-            <h2>Auto-built from what I study, write, and ship.</h2>
+            <h2>Built from my resume, profile, and live GitHub signals.</h2>
           </div>
           <div class="section-copy reveal">
             <p id="skills-meta">
@@ -659,7 +706,7 @@ const renderApp = () => {
         <section class="timeline section" id="education" aria-label="Education">
           <div class="section-heading">
             <p class="section-kicker">Education</p>
-            <h2>The academic path behind the portfolio.</h2>
+            <h2>The academic base behind the work I want to build.</h2>
           </div>
           <div class="timeline-grid">
             ${siteData.education
@@ -693,19 +740,19 @@ const renderApp = () => {
           <div class="project-grid" id="project-grid"></div>
         </section>
 
-        <section class="timeline section" aria-label="Principles">
+        <section class="timeline section" aria-label="Strengths">
           <div class="section-heading">
-            <p class="section-kicker">Principles</p>
-            <h2>A dynamic site still needs a point of view.</h2>
+            <p class="section-kicker">Strengths</p>
+            <h2>The qualities that keep showing up in how I learn and work.</h2>
           </div>
           <div class="timeline-grid">
-            ${siteData.principles
+            ${siteData.strengths
               .map(
-                (principle, index) => `
+                (strength, index) => `
                   <article class="timeline-card reveal">
                     <p class="project-index">0${index + 1}</p>
-                    <h3>Principle ${index + 1}</h3>
-                    <p>${principle}</p>
+                    <h3>${strength.title}</h3>
+                    <p>${strength.text}</p>
                   </article>
                 `
               )
@@ -716,17 +763,17 @@ const renderApp = () => {
         <section class="canva section" id="canva">
           <div class="section-heading">
             <p class="section-kicker">Canva Projects</p>
-            <h2>A design section built to grow as more Canva work gets added.</h2>
+            <h2>A separate visual lane for academic and presentation design work.</h2>
           </div>
           <div class="canva-shell reveal">
             <div class="canva-shell-copy">
               <p>
-                This section is separated from the main work cards so I can keep
-                adding more Canva projects over time without changing the whole site structure.
+                This section stays separate from the coding projects so I can keep
+                building a small visual portfolio alongside my technical work.
               </p>
               <p>
                 Right now it starts with one assignment cover design, and later it
-                can expand into posters, presentation slides, social designs, and more.
+                can expand into posters, presentation slides, event creatives, and more.
               </p>
             </div>
             <div class="canva-grid">
@@ -746,7 +793,7 @@ const renderApp = () => {
         <section class="notes section" id="notes">
           <div class="section-heading">
             <p class="section-kicker">Notes</p>
-            <h2>Short reflections from a growing student journey.</h2>
+            <h2>Short resume-backed signals from the journey so far.</h2>
           </div>
           <div class="notes-grid">
             ${siteData.notes
@@ -766,14 +813,14 @@ const renderApp = () => {
         <section class="contact section" id="contact">
           <div class="section-heading">
             <p class="section-kicker">Contact</p>
-            <h2>One data source for links, too.</h2>
+            <h2>The easiest ways to reach or review my work.</h2>
           </div>
           <div class="contact-grid reveal">
             <div>
               <p>
-                The structure is now personal enough to feel like yours, but the
-                final layer is your real contact info, links, and project names.
-                Those all live in one editable data object.
+                I am currently focused on learning, building stronger projects,
+                and staying open to opportunities that help me grow. Email,
+                LinkedIn, and GitHub are the best ways to connect with me right now.
               </p>
             </div>
             <div class="contact-links">
@@ -1323,24 +1370,24 @@ const hydrateLiveBits = () => {
   const rotatingHeadlines = [
     [
       "Arin Varconkar.",
-      "AI & DS student,",
+      "CSE student,",
       "building with clarity.",
     ],
     [
-      "Code, design,",
+      "Python, C, C++,",
       "and steady learning",
       "in one growing space.",
     ],
     [
-      "From C and C++ practice",
+      "From AI/ML basics",
       "to Canva-made visuals,",
-      "I like clean output.",
+      "I like clear output.",
     ],
   ];
   const rotatingQuotes = [
-    "“The best websites don’t just explain who you are. They make people feel it.”",
-    "“A personal website should grow with the person behind it.”",
-    "“Learning in public can become part of your identity.”",
+    "“A strong portfolio should sound like the real person behind the resume.”",
+    "“The best student websites make growth visible instead of pretending the journey is finished.”",
+    "“Small projects, clear thinking, and consistent learning compound over time.”",
   ];
   const rotatingSignals = siteData.heroSignals;
   const stabilizeRotatingAreas = () => {
