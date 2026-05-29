@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Portfolio preview panel">
+  <defs>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f4ed" />
+      <stop offset="100%" stop-color="#e9dece" />
+    </linearGradient>
+    <linearGradient id="warm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bb4d18" />
+      <stop offset="100%" stop-color="#f09b61" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" rx="34" fill="#121316" />
+  <rect x="42" y="42" width="1116" height="636" rx="28" fill="url(#panel)" />
+  <circle cx="168" cy="160" r="88" fill="#f2c48a" fill-opacity="0.6" />
+  <circle cx="1014" cy="118" r="68" fill="#d9804d" fill-opacity="0.18" />
+
+  <rect x="94" y="88" width="1012" height="74" rx="24" fill="rgba(255,255,255,0.52)" stroke="rgba(31,26,23,0.08)" />
+  <text x="130" y="132" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f1a17" letter-spacing="4">ARIN VARCONKAR</text>
+  <text x="790" y="132" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#67584f">About  Skills  Work  Canva  Contact</text>
+
+  <text x="104" y="258" font-family="Georgia, 'Times New Roman', serif" font-size="82" fill="#1f1a17">Minimal portfolio.</text>
+  <text x="104" y="336" font-family="Georgia, 'Times New Roman', serif" font-size="82" fill="#1f1a17">Dynamic core.</text>
+  <text x="104" y="392" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#67584f">Live GitHub repos, derived skills, motion, spotlight cards, and Canva work.</text>
+
+  <rect x="104" y="432" width="198" height="54" rx="27" fill="#bb4d18" />
+  <text x="142" y="467" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#fff7ef">See selected work</text>
+  <rect x="320" y="432" width="170" height="54" rx="27" fill="rgba(255,255,255,0.5)" stroke="rgba(31,26,23,0.1)" />
+  <text x="365" y="467" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1f1a17">Get in touch</text>
+
+  <g transform="translate(740 208)">
+    <rect width="304" height="344" rx="26" fill="rgba(255,255,255,0.58)" stroke="rgba(31,26,23,0.08)" />
+    <rect x="28" y="26" width="96" height="96" rx="22" fill="#c76b34" />
+    <text x="28" y="154" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#7d2f0d" letter-spacing="2">LIVE SNAPSHOT</text>
+    <text x="28" y="194" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#1f1a17">Learning in public,</text>
+    <text x="28" y="224" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#1f1a17">shipping a cleaner</text>
+    <text x="28" y="254" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#1f1a17">digital identity.</text>
+    <rect x="28" y="288" width="168" height="10" rx="5" fill="url(#warm)" />
+    <rect x="28" y="318" width="126" height="14" rx="7" fill="rgba(187,77,24,0.22)" />
+    <rect x="164" y="318" width="72" height="14" rx="7" fill="rgba(31,26,23,0.08)" />
+  </g>
+
+  <g transform="translate(94 550)">
+    <rect width="194" height="82" rx="22" fill="rgba(255,255,255,0.5)" stroke="rgba(31,26,23,0.08)" />
+    <text x="26" y="38" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f1a17">GitHub sync</text>
+    <text x="26" y="62" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#67584f">Projects update from live repos</text>
+  </g>
+
+  <g transform="translate(314 550)">
+    <rect width="194" height="82" rx="22" fill="rgba(255,255,255,0.5)" stroke="rgba(31,26,23,0.08)" />
+    <text x="26" y="38" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f1a17">Skills layer</text>
+    <text x="26" y="62" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#67584f">Pulled from profile and repo data</text>
+  </g>
+
+  <g transform="translate(534 550)">
+    <rect width="194" height="82" rx="22" fill="rgba(255,255,255,0.5)" stroke="rgba(31,26,23,0.08)" />
+    <text x="26" y="38" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f1a17">Canva work</text>
+    <text x="26" y="62" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#67584f">Separate visual showcase section</text>
+  </g>
+</svg>

@@ -1,52 +1,87 @@
-# <div align="center">Arin Varconkar Portfolio</div>
+<div align="center">
+  <img src="./assets/readme-banner.svg" alt="Arin Varconkar portfolio banner" width="100%" />
+</div>
 
 <div align="center">
 
-### A cinematic personal portfolio with live GitHub projects, dark mode, smooth motion, and a clean editorial feel.
+### A premium personal portfolio with live GitHub projects, editorial motion, dark mode, and a growing digital identity.
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-181717?style=for-the-badge&logo=github)](https://arinXcodes69.github.io/Portfolio/)
 [![Vercel](https://img.shields.io/badge/Vercel-Live-000000?style=for-the-badge&logo=vercel)](https://arin-varconkar-portfolio.vercel.app/)
 [![HTML](https://img.shields.io/badge/HTML5-Structure-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
-[![CSS](https://img.shields.io/badge/CSS3-Styling-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
-[![JavaScript](https://img.shields.io/badge/JavaScript-Dynamic-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)](#)
+[![CSS](https://img.shields.io/badge/CSS3-Visual%20System-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Dynamic%20Core-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)](#)
 
 </div>
 
 ---
 
-## Preview
+## The Vibe
 
-This portfolio is built as a personal web space for **Arin Varconkar** to present identity, learning, design work, and GitHub activity in one polished place.
+This is not a plain resume page and not a generic portfolio template.
 
-It is not a template dump or a plain card-based resume site. The goal is a portfolio that feels:
+It is built to feel:
 
-- intentional
-- premium
+- cinematic
+- clean
+- modern
+- warm
 - dynamic
 - personal
-- smooth on both desktop and mobile
+
+The goal is to make the repo page and the live site both feel like they belong to the same visual world.
 
 ---
 
-## Live Links
+## Live Experience
 
 - GitHub Pages: [arinXcodes69.github.io/Portfolio](https://arinXcodes69.github.io/Portfolio/)
 - Vercel: [arin-varconkar-portfolio.vercel.app](https://arin-varconkar-portfolio.vercel.app/)
 
 ---
 
-## What Makes It Cool
+## Visual Preview
 
-- Live **GitHub repo sync** for the projects section
-- **Auto-derived skills** from profile content and public repositories
-- **Dark mode toggle** with theme persistence
-- Strong **hero landing section** with motion and live status details
-- Smooth **scroll reveal animations**
-- **Sticky navbar** and responsive mobile navigation
-- Dedicated **Canva Projects** section
-- **Project spotlight modal** for deeper project viewing
-- **Auto-updating age** based on birthday
-- Static deployment support for both **GitHub Pages** and **Vercel**
+<div align="center">
+  <img src="./assets/readme-preview.svg" alt="Portfolio preview card" width="92%" />
+</div>
+
+---
+
+## What Makes This Portfolio Different
+
+### 1. Live GitHub-Powered Projects
+The portfolio pulls public repositories into the projects section so the site feels more connected to real work than static placeholder cards.
+
+### 2. Auto-Derived Skills
+Skills are inferred from profile content and repository data, making the site more adaptive and less manually repetitive.
+
+### 3. Premium Minimal UI
+The design aims for an Apple-meets-Stripe mood with soft depth, editorial spacing, warm gradients, and cleaner motion.
+
+### 4. A Separate Canva Showcase
+Creative work is not buried inside generic project cards. Canva designs have their own section so they can grow like a real visual portfolio.
+
+### 5. Dark Mode With Personality
+The dark theme is not an afterthought. It has its own proper surfaces, contrast, overlays, and motion treatment.
+
+---
+
+## Feature Stack
+
+```text
+• Sticky navbar
+• Smooth scrolling
+• Scroll reveal animations
+• Theme toggle with persistence
+• GitHub repo sync
+• Auto-built skills section
+• Spotlight project modal
+• Canva projects section
+• Auto-updating age
+• Responsive layout for desktop and mobile
+• SEO / Open Graph / manifest / robots / sitemap
+```
 
 ---
 
@@ -57,36 +92,21 @@ It is not a template dump or a plain card-based resume site. The goal is a portf
 - Vanilla JavaScript
 - Google Fonts
 
-No frameworks. No React. No build-heavy setup. Just a sharp static portfolio with dynamic client-side behavior.
+No framework layer.
+No React.
+No heavy build system.
+Just a polished static portfolio with dynamic client-side behavior.
 
 ---
 
-## Sections
-
-- Hero
-- About
-- Focus
-- Skills
-- Education
-- Projects
-- Canva Projects
-- Notes
-- Contact
-
----
-
-## Project Feel
-
-> Apple-like calm. Stripe-like polish. Student portfolio energy.  
-> Clean structure, warm color direction, and motion that feels deliberate instead of noisy.
-
----
-
-## Repo Structure
+## Structure
 
 ```text
 .
 ├── .github/workflows/deploy-pages.yml
+├── assets/
+│   ├── readme-banner.svg
+│   └── readme-preview.svg
 ├── index.html
 ├── styles.css
 ├── script.js
@@ -100,23 +120,66 @@ No frameworks. No React. No build-heavy setup. Just a sharp static portfolio wit
 
 ---
 
-## Highlights Inside The Code
+## Core Sections In The Site
 
-- `script.js`
-  Dynamic rendering, GitHub repo sync, skill extraction, theme toggle, spotlight logic, age automation
-
-- `styles.css`
-  Full visual system, responsive layout, dark mode handling, motion, cards, modal, hero treatment
-
-- `index.html`
-  Lightweight app shell, SEO metadata, Open Graph, Twitter card tags, JSON-LD schema
+- Hero
+- About
+- Focus
+- Skills
+- Education
+- Projects
+- Canva Projects
+- Notes
+- Contact
 
 ---
 
-## Why This Exists
+## Code Highlights
 
-This project is meant to grow over time, not just sit as a one-time college portfolio.  
-It is set up so new GitHub work, Canva designs, skills, and content can keep expanding without rebuilding everything from scratch.
+### `script.js`
+Handles the full dynamic content layer:
+
+- app rendering
+- GitHub repo fetching
+- skill extraction
+- project spotlight logic
+- theme persistence
+- live time and rotating hero content
+- age automation
+
+### `styles.css`
+Controls the full visual identity:
+
+- day and night themes
+- hero styling
+- motion
+- card system
+- modal behavior
+- responsive layout
+- portfolio atmosphere
+
+### `index.html`
+Keeps the app shell lightweight while handling:
+
+- SEO metadata
+- Open Graph tags
+- Twitter card tags
+- JSON-LD schema
+- manifest and favicon hooks
+
+---
+
+## Why This Repo Exists
+
+This repository is designed to grow with Arin Varconkar over time.
+
+It is not meant to freeze as a one-time college portfolio.
+It is meant to expand as:
+
+- new GitHub projects appear
+- new Canva work gets added
+- stronger skills develop
+- better project stories replace early placeholders
 
 ---
 
@@ -130,6 +193,6 @@ It is set up so new GitHub work, Canva designs, skills, and content can keep exp
 
 <div align="center">
 
-### Built to feel like a real digital identity, not just a student submission.
+### Built to feel like a real digital presence, not just a student submission.
 
 </div>
